@@ -16,7 +16,7 @@ const Navbar = () => {
         Activity
       </Link>
       <div className="right menu">
-        <Link to="/" className="item">
+        <Link to="/login" className="item">
           Login
         </Link>
       </div>

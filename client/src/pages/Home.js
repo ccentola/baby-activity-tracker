@@ -1,9 +1,10 @@
 import React from "react";
-
+import { Header } from "semantic-ui-react";
+import EditModal from "../components/EditModal";
 const Home = () => {
   return (
     <>
-      <div>Hello Home!</div>
+      <Header size="tiny">Hello, Dad!</Header>
     </>
   );
 };
