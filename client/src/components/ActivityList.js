@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
 import ActivityItem from "./ActivityItem";
+import EditModal from "./EditModal";
+
+// TODO: make use of the ActivityItem component
+// TODO: adjust names of data attributes to decouple from database
+// TODO: sort activities by date added
 
 const ActivityList = () => {
   const [activities, setActivities] = useState([]);
@@ -23,6 +28,7 @@ const ActivityList = () => {
     <table className="ui celled table">
       <thead>
         <tr>
+          <th>ID</th>
           <th>Date</th>
           <th>Feeding Type</th>
           <th>Amount</th>
@@ -31,6 +37,20 @@ const ActivityList = () => {
       </thead>
       <tbody>
         {activities.map((activity) => (
+          <tr key={activity.activity_id}>
+            <td data-label="ID">{activity.activity_id}</td>
+            <td data-label="Date">
+              {new Date(activity.created_at).toLocaleString("en-US")}
+            </td>
+            <td data-label="Feeding Type">{activity.feeding_type}</td>
+            <td data-label="Amount">{activity.amount}</td>
+            <td data-label="Edit">
+              <EditModal activity={activity} />
+            </td>
+          </tr>
+        ))}
+
+        {/* {activities.map((activity) => (
           <ActivityItem
             key={activity.activity_id}
             activityId={activity.activity_id}
@@ -38,7 +58,7 @@ const ActivityList = () => {
             datetime={activity.created_at}
             amount={activity.amount}
           />
-        ))}
+        ))} */}
       </tbody>
     </table>
   );

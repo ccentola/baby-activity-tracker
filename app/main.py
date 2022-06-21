@@ -6,6 +6,9 @@ from .schemas import FoodCreate
 from sqlalchemy.orm import Session
 from fastapi.middleware.cors import CORSMiddleware
 
+# TODO: decompose routes into separate files
+# TODO: rebase to /activites instead of /food
+
 app = FastAPI()
 
 origins = ["*"]

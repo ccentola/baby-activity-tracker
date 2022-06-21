@@ -10,7 +10,7 @@ const ActivityItem = (props) => {
       <td data-label="Feeding Type">{props.feedingType}</td>
       <td data-label="Amount">{props.amount}</td>
       <td data-label="Edit">
-        <EditModal />
+        <EditModal activityId={props.activity_id} />
       </td>
     </tr>
   );
