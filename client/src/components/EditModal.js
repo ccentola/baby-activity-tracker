@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Button, Form, Modal, Input } from "semantic-ui-react";
 
+// TODO: change feeding type to dropdown
+
 const EditModal = ({ activity }) => {
   const [open, setOpen] = useState(false);
   const [values, setValues] = useState({
@@ -40,6 +42,7 @@ const EditModal = ({ activity }) => {
           <Form.Field
             id="form-input-control-feeding"
             control={Input}
+            value={values.feeding_type}
             onChange={(e) =>
               setValues({ ...values, feeding_type: e.target.value })
             }
@@ -48,6 +51,7 @@ const EditModal = ({ activity }) => {
           <Form.Field
             id="form-input-control-amount"
             control={Input}
+            value={values.amount}
             onChange={(e) => setValues({ ...values, amount: e.target.value })}
             label="Amount"
           />
