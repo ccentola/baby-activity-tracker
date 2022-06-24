@@ -4,7 +4,7 @@ import EditModal from "./EditModal";
 
 // TODO: make use of the ActivityItem component
 // TODO: adjust names of data attributes to decouple from database
-// TODO: sort activities by date added
+// TODO: sort activities by date added OR make table sortable
 
 const ActivityList = () => {
   const [activities, setActivities] = useState([]);

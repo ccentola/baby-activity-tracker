@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const AddActivity = () => {
+const AddActivity = ({ onCancel }) => {
   const [feedingType, setFeedingType] = useState("");
   const [amount, setAmount] = useState(0);
 
@@ -44,6 +44,9 @@ const AddActivity = () => {
           </div>
         </div>
 
+        <button className="ui button" onClick={onCancel}>
+          Cancel
+        </button>
         <button className="ui button">Add</button>
       </form>
     </>
