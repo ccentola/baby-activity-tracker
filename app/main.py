@@ -24,9 +24,9 @@ app.add_middleware(
 
 # get all food
 @app.get("/food")
-def get_foods(db: Session = Depends(get_db)):
+def get_foods(db: Session = Depends(get_db), skip: int = 0, limit: int = 100):
     food = db.query(Food).all()
-    return food
+    return food[skip : skip + limit]
 
 
 # get a single food activity
